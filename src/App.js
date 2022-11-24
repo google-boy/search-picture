@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "openai";
 import { useState } from "react";
-import './App.css'
+import Container from "react-bootstrap/Container";
 
 function App() {
   const [prompt, setPrompt] = useState('')
@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <Container fluid className="App">
       <>
         <h2>Generate Image using Open AI API</h2>
         <textarea
@@ -32,7 +32,7 @@ function App() {
         />
         <button onClick={generateImage}>Generate an Image</button>
       </>
-    </div>
+    </Container>
   )
 }
 
