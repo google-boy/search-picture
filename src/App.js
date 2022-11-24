@@ -36,6 +36,11 @@ function App() {
           </Form.Group>
           <Button onClick={generateImage}>Generate an Image</Button>
         </Form>
+        {result.length > 0 ? (
+          <img className="result-image" src={result} alt="result" />
+        ) : (
+          <></>
+        )}
       </>
     </Container>
   )
