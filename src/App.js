@@ -1,6 +1,8 @@
 import { Configuration, OpenAIApi } from "openai";
 import { useState } from "react";
 import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 function App() {
   const [prompt, setPrompt] = useState('')
@@ -23,14 +25,15 @@ function App() {
     <Container fluid className="App">
       <>
         <h2>Generate Image using Open AI API</h2>
-        <textarea
-          className="app-input"
-          placeholder="Search Bears with Paint Brushes the Starry Night, painted by Vincent Van Gogh"
-          onChange={(e) => setPrompt(e.target.value)}
-          rows="10"
-          cols="40" 
-        />
-        <button onClick={generateImage}>Generate an Image</button>
+        <hr />
+        <Form>
+          <Form.Group className="SearchInput">
+            <Form.Control as="textarea"
+             placeholder="Search Bears with Paint Brushes the Starry Night, painted by Vincent Van Gogh.."
+             onChange={(e) => setPrompt(e.target.value)}/>
+          </Form.Group>
+          <Button onClick={generateImage}>Generate an Image</Button>
+        </Form>
       </>
     </Container>
   )
