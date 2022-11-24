@@ -6,6 +6,8 @@ import Form from "react-bootstrap/Form";
 
 function App() {
   const [prompt, setPrompt] = useState('')
+  const [result, setResult] = useState('')
+
   const configuration = new Configuration({
     apiKey: process.env.REACT_Open_AI_Key
   })
@@ -18,7 +20,7 @@ function App() {
       n: 1,
       size: "512x512",
     })
-    console.log(response.data.data[0].url)
+    setResult(response.data.data[0].url)
   }
 
   return (
